@@ -1,0 +1,346 @@
+{
+  "hero": {
+    "title1": "Sidoel ",
+    "title2": "solusi terbaik ",
+    "title3": "Digitalisasi ",
+    "title4": "Sekolahmu",
+    "subtitle": "Kami siap mendukung digitalisasi sekolah Anda. Silakan uji coba <br><br> <strong>Sidoel Pendataan</strong><br>Username: <code>admin</code> &nbsp;&nbsp;Password: <code>password</code><br><br><strong>Sidoel CBT</strong><br>Username: <code>admin@admin.id</code> &nbsp;&nbsp;Password: <code>password</code>",
+    "get_started": [
+      {
+        "title": "Sdioel Pendataan",
+        "url": "https://demo.sidoel.id/",
+        "color": "default"
+      },
+      {
+        "title": "Sdioel CBT",
+        "url": "https://demo5.e-cbt.id",
+        "color": "outline"
+      }
+    ]
+  },
+  "features": {
+    "title": "Banyak",
+    "subtitle": " Fitur Unggulan",
+    "lists": [
+      {
+        "title": "Desain Responsif",
+        "description": "Antarmuka yang mudah diakses dari perangkat apa pun, baik komputer, tablet, maupun smartphone.",
+        "image": "/assets/looking-ahead.png"
+      },
+      {
+        "title": "User Interface Intuitif",
+        "description": "Tampilan yang sederhana dan mudah dipahami, memudahkan guru dan siswa dalam menggunakan aplikasi.",
+        "image": "/assets/reflecting.png"
+      },
+      {
+        "title": "User Interface Intuitif",
+        "description": "Tampilan yang sederhana dan mudah dipahami, memudahkan guru dan siswa dalam menggunakan aplikasi.",
+        "image": "/assets/reflecting.png"
+      },
+      {
+        "title": "User Interface Intuitif",
+        "description": "Tampilan yang sederhana dan mudah dipahami, memudahkan guru dan siswa dalam menggunakan aplikasi.",
+        "image": "/assets/reflecting.png"
+      },
+      {
+        "title": "User Interface Intuitif",
+        "description": "Tampilan yang sederhana dan mudah dipahami, memudahkan guru dan siswa dalam menggunakan aplikasi.",
+        "image": "/assets/reflecting.png"
+      },
+      {
+        "title": "User Interface Intuitif",
+        "description": "Tampilan yang sederhana dan mudah dipahami, memudahkan guru dan siswa dalam menggunakan aplikasi.",
+        "image": "/assets/reflecting.png"
+      },
+      {
+        "title": "Analisis Data dan Laporan Ujian",
+        "description": "Fitur canggih untuk memantau hasil ujian dan pendataan siswa secara real-time, membantu proses evaluasi lebih efektif.",
+        "image": "/assets/growth.png"
+      }
+    ]
+  },
+  "testimonials": {
+    "title": "Mereka Puas",
+    "subtitle": "dengan Sidoel",
+    "lists": [
+      {
+        "image": "/assets/shadcn.png",
+        "name": "Ahmad Saputra",
+        "userName": "@ahmad.saputra",
+        "comment": "Sidoel sangat membantu proses pendataan siswa dan ujian online di sekolah kami. Interface-nya juga sangat mudah digunakan oleh guru dan siswa."
+      },
+      {
+        "image": "/assets/shadcn.png",
+        "name": "Lestari Wulandari",
+        "userName": "@lestari.wulandari",
+        "comment": "Dengan Sidoel, rekap nilai dan analisis hasil ujian jadi lebih cepat dan akurat. Tidak perlu lagi input manual satu per satu."
+      },
+      {
+        "image": "/assets/shadcn.png",
+        "name": "Budi Hartono",
+        "userName": "@budi.hartono",
+        "comment": "Aplikasi ini memudahkan kami dalam mengelola ujian berbasis komputer. Dukungan teknisnya juga responsif dan sangat membantu."
+      },
+      {
+        "image": "/assets/shadcn.png",
+        "name": "Sri Wahyuni",
+        "userName": "@sri.wahyuni",
+        "comment": "Sidoel membuat proses penjadwalan dan pelaksanaan ujian lebih tertib dan efisien. Cocok untuk madrasah dan sekolah umum."
+      },
+      {
+        "image": "/assets/shadcn.png",
+        "name": "Teguh Prasetyo",
+        "userName": "@teguh.prasetyo",
+        "comment": "Sistem pendataan siswa dan guru di Sidoel sangat lengkap dan fleksibel. Data bisa diakses kapan saja tanpa ribet."
+      },
+      {
+        "image": "/assets/shadcn.png",
+        "name": "Nuraini Rahmah",
+        "userName": "@nuraini.rahmah",
+        "comment": "Sangat direkomendasikan! Mulai dari input soal, pelaksanaan ujian, sampai export nilai ke Excel, semua bisa dilakukan dengan Sidoel."
+      }
+    ]
+  },
+  "faq_lists": [
+    {
+      "question": "Apakah template ini gratis digunakan?",
+      "answer": "Ya, template ini tersedia secara gratis untuk penggunaan Sidoel.",
+      "value": "item-1"
+    },
+    {
+      "question": "Apakah Sidoel mendukung pendataan siswa secara lengkap?",
+      "answer": "Ya, Sidoel menyediakan fitur pendataan siswa yang lengkap dan mudah digunakan, termasuk pengelolaan data pribadi, kelas, dan riwayat akademik.",
+      "value": "item-2"
+    },
+    {
+      "question": "Bisakah saya menggunakan Sidoel untuk ujian online (CBT)?",
+      "answer": "Tentu saja, Sidoel dilengkapi dengan sistem Computer Based Test (CBT) untuk mendukung pelaksanaan ujian secara online dengan fitur timer dan pengawasan soal.",
+      "value": "item-3"
+    },
+    {
+      "question": "Apakah data siswa dan hasil ujian aman di Sidoel?",
+      "answer": "Sidoel mengutamakan keamanan data dengan sistem autentikasi yang kuat dan penyimpanan data yang terenkripsi.",
+      "value": "item-4"
+    },
+    {
+      "question": "Bagaimana cara mendapatkan dukungan teknis jika ada kendala?",
+      "answer": "Anda dapat menghubungi tim support kami melalui email atau fitur kontak yang tersedia di aplikasi untuk mendapatkan bantuan teknis.",
+      "value": "item-5"
+    }
+  ],
+  "how_it_works": [
+    {
+      "icon": "MedalIcon",
+      "title": "Akses Mudah",
+      "description": "Sistem kami memberikan kemudahan akses untuk pendataan dan ujian secara online kapan saja dan di mana saja."
+    },
+    {
+      "icon": "MapIcon",
+      "title": "Terintegrasi",
+      "description": "Data siswa dan hasil ujian tersimpan rapi dan terhubung dalam satu platform yang mudah diakses oleh guru dan admin."
+    },
+    {
+      "icon": "PlaneIcon",
+      "title": "Skalabilitas Tinggi",
+      "description": "Dapat digunakan untuk berbagai jenjang sekolah dengan kapasitas pengguna yang besar tanpa kendala performa."
+    },
+    {
+      "icon": "GiftIcon",
+      "title": "Fitur Lengkap",
+      "description": "Mendukung fitur lengkap mulai dari pendataan siswa, manajemen kelas, hingga pelaksanaan ujian berbasis komputer."
+    }
+  ],
+  "pricing": [
+    {
+      "title": "Gratis",
+      "popular": 0,
+      "price": 0,
+      "description": "Cocok untuk sekolah kecil dengan fitur dasar pendataan dan ujian online.",
+      "buttonText": "Mulai Sekarang",
+      "benefitList": [
+        "1 pengguna",
+        "Penyimpanan 2 GB",
+        "Maksimal 4 kelas/halaman",
+        "Dukungan komunitas",
+        "Fitur dasar pendataan siswa"
+      ]
+    },
+    {
+      "title": "Premium",
+      "popular": 1,
+      "price": 5,
+      "description": "Fitur lengkap untuk sekolah menengah dengan kapasitas lebih besar dan dukungan prioritas.",
+      "buttonText": "Coba Gratis",
+      "benefitList": [
+        "4 pengguna",
+        "Penyimpanan 4 GB",
+        "Maksimal 6 kelas/halaman",
+        "Dukungan prioritas",
+        "Fitur ujian dan pelaporan lengkap"
+      ]
+    },
+    {
+      "title": "Enterprise",
+      "popular": 0,
+      "price": 40,
+      "description": "Solusi lengkap untuk institusi besar dengan kebutuhan kustom dan dukungan penuh.",
+      "buttonText": "Hubungi Kami",
+      "benefitList": [
+        "10 pengguna atau lebih",
+        "Penyimpanan 8 GB",
+        "Maksimal 10 kelas/halaman",
+        "Dukungan prioritas penuh",
+        "Integrasi dan kustomisasi khusus"
+      ]
+    }
+  ],
+  "services": [
+    {
+      "title": "Kolaborasi Data",
+      "description": "Memudahkan guru dan staf untuk bekerja sama dalam pengelolaan data siswa secara terpusat dan real-time.",
+      "icon": "ChartIcon"
+    },
+    {
+      "title": "Manajemen Proyek Akademik",
+      "description": "Mendukung perencanaan dan pengelolaan kegiatan sekolah, seperti jadwal ujian dan program pembelajaran.",
+      "icon": "WalletIcon"
+    },
+    {
+      "title": "Otomatisasi Tugas",
+      "description": "Mengotomatiskan proses rutin seperti pengumpulan nilai, pengaturan jadwal ujian, dan pelaporan hasil secara efisien.",
+      "icon": "MagnifierIcon"
+    }
+  ],
+  "stats": [
+    {
+      "quantity": "150+",
+      "description": "Users"
+    },
+    {
+      "quantity": "500+",
+      "description": "Subscribers"
+    },
+    {
+      "quantity": "120+",
+      "description": "Mobile"
+    },
+    {
+      "quantity": "2",
+      "description": "Products"
+    }
+  ],
+  "teamList": [
+    {
+      "imageUrl": "/assets/team/toni.jpg",
+      "name": "Achmad Fathoni",
+      "position": "Administrator",
+      "description": "Bertanggung jawab atas pengelolaan sistem dan integrasi data di aplikasi Sidoel.",
+      "socialNetworks": [
+        {
+          "name": "WhatsApp",
+          "url": "https://wa.me/6285692030505"
+        }
+      ]
+    },
+    {
+      "imageUrl": "/assets/team/fahmi.jpg",
+      "name": "Achmad Fahmi",
+      "position": "Data Center Officer",
+      "description": "Menjamin keamanan, ketersediaan, dan keakuratan data pengguna di sistem.",
+      "socialNetworks": [
+        {
+          "name": "WhatsApp",
+          "url": "https://wa.me/6281314488544"
+        }
+      ]
+    },
+    {
+      "imageUrl": "/assets/team/kidaus.jpg",
+      "name": "Achmad Firdaus",
+      "position": "Chief Executive Officer",
+      "description": "Pemimpin tim dan pengarah visi strategis pengembangan aplikasi Sidoel.",
+      "socialNetworks": [
+        {
+          "name": "WhatsApp",
+          "url": "https://wa.me/6281384685088"
+        }
+      ]
+    },
+    {
+      "imageUrl": "/assets/team/iyen.jpg",
+      "name": "Iyen",
+      "position": "Fullstack Developer",
+      "description": "Mengembangkan antarmuka pengguna dan backend API untuk platform ujian online Sidoel.",
+      "socialNetworks": [
+        {
+          "name": "WhatsApp",
+          "url": "https://wa.me/6289606515515"
+        }
+      ]
+    },
+    {
+      "imageUrl": "/assets/team/doel.jpg",
+      "name": "Abdullah",
+      "position": "Marketing Application",
+      "description": "Mengelola promosi dan strategi pemasaran aplikasi Sidoel ke berbagai institusi pendidikan.",
+      "socialNetworks": [
+        {
+          "name": "WhatsApp",
+          "url": "https://wa.me/6281318403220"
+        }
+      ]
+    },
+    {
+      "imageUrl": "/assets/team/dirja.jpg",
+      "name": "Dirza Fatah Al Aslam",
+      "position": "UI/UX Designer",
+      "description": "Merancang tampilan dan pengalaman pengguna yang intuitif dan efisien.",
+      "socialNetworks": [
+        {
+          "name": "WhatsApp",
+          "url": "https://wa.me/6287884598510"
+        }
+      ]
+    },
+    {
+      "imageUrl": "/assets/team/imam.jpg",
+      "name": "Imam Waliyudin",
+      "position": "Support Engineer",
+      "description": "Memberikan dukungan teknis dan pemeliharaan sistem secara berkala.",
+      "socialNetworks": [
+        {
+          "name": "WhatsApp",
+          "url": "https://wa.me/6281586528921"
+        }
+      ]
+    },
+    {
+      "imageUrl": "/assets/team/ido.jpg",
+      "name": "Fathur Ridho",
+      "position": "Server Manager",
+      "description": "Menjaga stabilitas dan keamanan server tempat aplikasi Sidoel dijalankan.",
+      "socialNetworks": [
+        {
+          "name": "WhatsApp",
+          "url": "https://wa.me/6285282770692"
+        }
+      ]
+    },
+    {
+      "imageUrl": "/assets/team/ibnu.jpg",
+      "name": "Ibnu Ruslan",
+      "position": "Content Editor",
+      "description": "Mengelola dan menyunting konten edukatif serta dokumentasi aplikasi Sidoel.",
+      "socialNetworks": [
+        {
+          "name": "WhatsApp",
+          "url": "https://wa.me/6285921404519"
+        }
+      ]
+    }
+  ],
+  "about": {
+    "image": "/assets/pilot.png",
+    "description": "Sidoel (Sistem Informasi Data dan Ujian Elektronik) adalah platform digital yang dirancang untuk mempermudah proses pendataan siswa serta pelaksanaan ujian secara online. Aplikasi ini mendukung berbagai jenis ujian dan dilengkapi fitur monitoring, rekap nilai otomatis, serta antarmuka yang ramah pengguna. Dengan Sidoel, sekolah dapat mengelola data akademik secara lebih efisien dan akurat, mempercepat proses evaluasi, serta memberikan pengalaman ujian yang aman dan nyaman bagi siswa."
+  }
+}
