@@ -6,6 +6,9 @@ import {usePage} from "@inertiajs/react";
 import {HeroType} from "@/types/landing";
 import {PageProps} from "@/types";
 import {ArrowBigRightDash} from "lucide-react";
+import {AuroraText} from "@/components/magicui/aurora-text";
+import {Meteors} from "@/components/magicui/meteors";
+import {DotPattern} from "@/components/magicui/dot-pattern";
 
 interface HeroProps extends PageProps {
     data: {
@@ -19,26 +22,29 @@ export const Hero = () => {
         <section className="container grid lg:grid-cols-2 place-items-center py-20 md:py-32 gap-10">
             <div className="text-center lg:text-start space-y-6">
                 <main className="text-5xl md:text-6xl font-bold">
+                    <DotPattern glow className="opacity-40" />
                     <h1 className="inline">
                         <span
                             className="inline bg-gradient-to-r from-[#F596D3]  to-[#D247BF] text-transparent bg-clip-text">
-                          {hero.title1}
+                          <AuroraText
+                              speed={1.5}
+                              className="font-extrabold"
+                          >
+                        {hero.title1}
+                        </AuroraText>
                         </span>
-                        {hero.title2}
+                        {" "}{hero.title2}
                     </h1>
                     untuk{" "}
                     <h2 className="inline">
-                        <span
-                            className="inline bg-gradient-to-r from-[#61DAFB] via-[#1fc0f1] to-[#03a3d7] text-transparent bg-clip-text">
-                                        {hero.title3}
-                        </span>{" "}
+                        <AuroraText>{hero.title3}</AuroraText>
                         {hero.title4}
                     </h2>
                 </main>
 
                 <div
                     className="text-muted-foreground"
-                    dangerouslySetInnerHTML={{ __html: hero.subtitle }}
+                    dangerouslySetInnerHTML={{__html: hero.subtitle}}
                 />
 
                 <div className="space-y-4 md:space-y-0 md:space-x-4">

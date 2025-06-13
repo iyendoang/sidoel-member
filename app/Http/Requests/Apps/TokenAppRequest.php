@@ -33,12 +33,12 @@
             // Super admin wajib ada token_npsn, expired_at, dan status
             $rules['token_npsn'] = 'required|string|size:8';
             $rules['expired_at'] = 'required|date';
-            $rules['status']     = 'required|in:active,expired,revoked';
+            $rules['status']     = 'required|in:active,in_active,suspended';
          } else {
             // Member dan role lain: token_npsn nullable, expired_at dan status juga nullable
             $rules['token_npsn'] = 'nullable|string|size:8';
             $rules['expired_at'] = 'nullable|date';
-            $rules['status']     = 'nullable|in:active,expired,revoked';
+            $rules['status']     = 'nullable|in:active,in_active,suspended';
          }
 
          return $rules;

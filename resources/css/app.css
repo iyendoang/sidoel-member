@@ -113,6 +113,13 @@
         --input: 240 3.7% 15.9%;
         --ring: 142.4 71.8% 29.2%;
     }
+
+    .theme {
+        --animate-shine: shine var(--duration) infinite linear;
+        --animate-meteor: meteor 5s linear infinite;
+        --animate-aurora: aurora 8s ease-in-out infinite alternate;
+        --animate-grid: grid 15s linear infinite;
+    }
 }
 
 @layer base {
@@ -124,6 +131,7 @@
         @apply bg-background text-foreground;
     }
 }
+
 .mde-editor {
     @apply bg-white text-black;
 }
@@ -131,17 +139,17 @@
 /* Dark mode */
 .dark .mde-editor {
     background-color: #18181b !important; /* zinc-900 */
-    color: #f3f4f6 !important;            /* gray-100 */
-    border-color: #3f3f46 !important;     /* zinc-700 */
+    color: #f3f4f6 !important; /* gray-100 */
+    border-color: #3f3f46 !important; /* zinc-700 */
 }
 
 .dark .mde-preview {
     background-color: #18181b !important; /* zinc-900 */
-    color: #f3f4f6 !important;            /* gray-100 */
+    color: #f3f4f6 !important; /* gray-100 */
 }
 
 .dark .rc-md-navigation {
-    background-color: #27272a !important;    /* zinc-800 */
+    background-color: #27272a !important; /* zinc-800 */
     border-bottom-color: #3f3f46 !important; /* zinc-700 */
 }
 
@@ -151,5 +159,89 @@
 
 .dark .section-container {
     background-color: #18181b !important; /* zinc-900 */
-    color: #f3f4f6 !important;            /* gray-100 */
+    color: #f3f4f6 !important; /* gray-100 */
+}
+
+@theme inline {
+    @keyframes shine {
+        0% {
+            background-position: 0% 0%;
+        }
+        50% {
+            background-position: 100% 100%;
+        }
+        to {
+            background-position: 0% 0%;
+        }
+    }
+    @keyframes meteor {
+        0% {
+            transform: rotate(var(--angle)) translateX(0);
+            opacity: 1;
+        }
+        70% {
+            opacity: 1;
+        }
+        100% {
+            transform: rotate(var(--angle)) translateX(-500px);
+            opacity: 0;
+        }
+    }
+    @keyframes aurora {
+        0% {
+            background-position: 0% 50%;
+            transform: rotate(-5deg) scale(0.9);
+        }
+        25% {
+            background-position: 50% 100%;
+            transform: rotate(5deg) scale(1.1);
+        }
+        50% {
+            background-position: 100% 50%;
+            transform: rotate(-3deg) scale(0.95);
+        }
+        75% {
+            background-position: 50% 0%;
+            transform: rotate(3deg) scale(1.05);
+        }
+        100% {
+            background-position: 0% 50%;
+            transform: rotate(-5deg) scale(0.9);
+        }
+    }
+    @keyframes grid {
+        0% {
+            transform: translateY(-50%);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
+}
+/* styles.css */
+@layer utilities {
+    .meteor {
+        @apply pointer-events-none absolute rounded-full bg-zinc-500 shadow-[0_0_0_1px_#ffffff10];
+        width: 0.125rem;
+        height: 0.125rem;
+        animation: meteor var(--duration-meteor) linear infinite;
+    }
+
+    .meteor-tail {
+        @apply pointer-events-none absolute top-1/2 -z-10 h-px w-[50px] bg-gradient-to-r from-transparent via-white to-transparent;
+        transform-origin: left center;
+        animation: meteor var(--duration-meteor) linear infinite;
+    }
+
+    /* shine animation bg-gradient */
+    .shine {
+        background-image: linear-gradient(
+                270deg,
+                rgba(255 255 255 / 0.12) 0%,
+                rgba(255 255 255 / 0.32) 80%,
+                rgba(255 255 255 / 0.12) 100%
+        );
+        background-size: 400% 400%;
+        animation: shine var(--duration) linear infinite;
+    }
 }

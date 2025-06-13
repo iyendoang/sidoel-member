@@ -3,7 +3,7 @@ import {Textarea} from "@/components/ui/textarea";
 import {Label} from "@/components/ui/label";
 import {Button} from "@/components/ui/button";
 import {Save, X, LoaderCircle, Building2Icon} from "lucide-react";
-import {TokenAppsFormProps} from "@/types/token-apps";
+import {TokenAppFormProps} from "@/types/token-apps";
 import {InputToken} from "@/components/ui/input-token";
 import {
     Select,
@@ -30,7 +30,7 @@ export default function TokenAppsForm({
                                           reset,
                                           applications,
                                           lembagasData
-                                      }: TokenAppsFormProps) {
+                                      }: TokenAppFormProps) {
     const lembagas: SelectOption[] = (lembagasData as Lembaga[]).map((l: Lembaga): SelectOption => ({
         value: l.npsn,
         label: l.name,
@@ -106,8 +106,8 @@ export default function TokenAppsForm({
                                 </SelectTrigger>
                                 <SelectContent>
                                     <SelectItem value="active">Aktif</SelectItem>
-                                    <SelectItem value="expired">Kadaluarsa</SelectItem>
-                                    <SelectItem value="revoked">Diblokir</SelectItem>
+                                    <SelectItem value="in_active">Tidak AKtif</SelectItem>
+                                    <SelectItem value="suspended">Diblokir</SelectItem>
                                 </SelectContent>
                             </Select>
                             <p className="text-red-500 text-xs">{errors.status}</p>

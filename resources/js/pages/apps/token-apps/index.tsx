@@ -23,20 +23,21 @@ import {
 import {PageProps} from '@/types'
 import {ModalDelete} from '@/components/modal-delete'
 import {Head, useForm, usePage} from '@inertiajs/react'
-import {Building2, PlusCircle} from 'lucide-react'
+import {PlusCircle} from 'lucide-react'
 import hasAnyPermission from '@/utils/has-permissions'
 import {ActionButton} from '@/components/action-button'
 import PagePagination from '@/components/page-pagination'
-import {TokenApps, TokenAppsLink} from "@/types/token-apps";
+import {TokenApp, TokenAppLink} from "@/types/token-apps";
 import {Application} from "@/types/application";
-import TokenAppsForm from "@/pages/apps/token-apps/token-apps-form";
+import TokenAppForm from "@/pages/apps/token-apps/token-apps-form";
 import {Lembaga} from "@/types/lembaga";
-import {waktuRelatif, formatTanggalIndo, formatWaktuIndo, tanggalSekarang, selisihHari, addHari} from "@/utils/date";
+import {BadgeStatus} from "@/components/custom/badge-status";
+import {formatTanggalIndo} from "@/utils/date";
 
 interface IndexProps extends PageProps {
     tokenApps: {
-        data: TokenApps[],
-        meta: TokenAppsLink[],
+        data: TokenApp[],
+        meta: TokenAppLink,
         current_page: number,
         per_page: number,
     }
@@ -46,6 +47,17 @@ interface IndexProps extends PageProps {
     currentPage: number
 }
 
+interface FormData {
+    id: string | number;
+    token: string;
+    application_id: string | number;
+    token_npsn: string;
+    expired_at: string;
+    status: 'active' | 'in_active' | 'suspended' | '';
+    description: string;
+    open: boolean;
+    isUpdate: boolean;
+}
 
 export default function Index() {
 
@@ -70,7 +82,8 @@ export default function Index() {
     }))
 
 
-    const handleModalUpdate = (tokenApps: TokenApps) => {
+    const handleModalUpdate = (tokenApps: TokenApp) => {
+        // @ts-ignore
         setData(prevData => ({
             ...prevData,
             id: tokenApps.id ?? '',
@@ -86,7 +99,7 @@ export default function Index() {
     };
 
 
-    const handleModalDelete = (tokenApps: TokenApps) => {
+    const handleModalDelete = (tokenApps: TokenApp) => {
         setDeleteModal(true);
         setData(prevData => ({
             ...prevData,
@@ -122,8 +135,8 @@ export default function Index() {
 
     return (
         <>
-            <Head title='Data TokenApps'/>
-            <Header title='Data TokenApps' subtitle='Halaman ini digunakan untuk mengelola data tokenApps pengguna'>
+            <Head title='Data TokenApp'/>
+            <Header title='Data TokenApp' subtitle='Halaman ini digunakan untuk mengelola data tokenApps pengguna'>
                 <Dialog
                     open={data.open}
                     onOpenChange={(open) => setData({
@@ -143,18 +156,18 @@ export default function Index() {
                         <DialogTrigger
                             className="px-4 py-2 flex items-center gap-2 rounded-lg text-sm font-semibold text-gray-700 border hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-900 dark:border-gray-800 focus:outline-none">
                             <PlusCircle className="size-4"/> <span
-                            className="hidden sm:inline-flex">Tambah Data TokenApps</span>
+                            className="hidden sm:inline-flex">Tambah Data TokenApp</span>
                         </DialogTrigger>
                     }
                     <DialogContent className='p-0'>
                         <DialogHeader className="p-4 border-b">
-                            <DialogTitle>{data.isUpdate ? 'Ubah' : 'Tambah'} Data TokenApps</DialogTitle>
+                            <DialogTitle>{data.isUpdate ? 'Ubah' : 'Tambah'} Data TokenApp</DialogTitle>
                             <DialogDescription className="text-sm">
                                 Form ini digunakan
                                 untuk {data.isUpdate ? 'mengubah data tokenApps' : 'menambahkan data tokenApps'}
                             </DialogDescription>
                         </DialogHeader>
-                        <TokenAppsForm
+                        <TokenAppForm
                             data={data}
                             errors={errors}
                             processing={processing}
@@ -181,9 +194,13 @@ export default function Index() {
                         <TableHeader>
                             <TableRow>
                                 <TableHead className='w-[10px] text-center'>No</TableHead>
-                                <TableHead>Token</TableHead>
-                                <TableHead>Expired</TableHead>
-                                <TableHead>Activity</TableHead>
+                                <TableHead className="w-10 text-center">Aplication</TableHead>
+                                <TableHead>Lembaga</TableHead>
+                                <TableHead className="w-10 text-center">NPSN</TableHead>
+                                <TableHead className="w-10 text-center">Token</TableHead>
+                                <TableHead className="w-20">Expired</TableHead>
+                                <TableHead className="w-10 text-center">Activity</TableHead>
+                                <TableHead className="w-10 text-center">Status</TableHead>
                                 <TableHead className='w-[10px] text-center'>Aksi</TableHead>
                             </TableRow>
                         </TableHeader>
@@ -196,9 +213,16 @@ export default function Index() {
                                         <TableCell className="text-center">
                                             {++index + (currentPage - 1) * perPage}
                                         </TableCell>
-                                        <TableCell>{tokenApps.token}</TableCell>
-                                        <TableCell>{formatTanggalIndo(tokenApps.expired_at)}</TableCell>
-                                        <TableCell>{waktuRelatif(tokenApps.created_at)}</TableCell>
+                                        <TableCell className="w-10 text-center">{tokenApps.application.name}</TableCell>
+                                        <TableCell>{tokenApps.lembaga.name}</TableCell>
+                                        <TableCell>{tokenApps.lembaga.npsn}</TableCell>
+                                        <TableCell className="w-10 text-center">{tokenApps.token}</TableCell>
+                                        <TableCell>{tokenApps.expired_human}</TableCell>
+                                        <TableCell>{tokenApps.used_human}</TableCell>
+                                        <TableCell className="text-center">
+                                            <BadgeStatus
+                                                status={tokenApps.status as "active" | "in_active" | "suspended"}/>
+                                        </TableCell>
                                         <TableCell>
                                             <div className='flex items-center justify-center'>
                                                 {(hasAnyPermission(['token-apps-update']) || hasAnyPermission(['token-apps-delete'])) &&

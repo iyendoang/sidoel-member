@@ -191,7 +191,9 @@ export default function Index() {
                         <TableHeader>
                             <TableRow>
                                 <TableHead className='w-[10px] text-center'>No</TableHead>
-                                <TableHead>Nama Data Application</TableHead>
+                                <TableHead>Nama</TableHead>
+                                <TableHead>Slug</TableHead>
+                                <TableHead>Description</TableHead>
                                 <TableHead className='w-[10px] text-center'>Aksi</TableHead>
                             </TableRow>
                         </TableHeader>
@@ -205,6 +207,8 @@ export default function Index() {
                                             {++index + (applications.current_page - 1) * applications.per_page}
                                         </TableCell>
                                         <TableCell>{application.name}</TableCell>
+                                        <TableCell>{application.slug}</TableCell>
+                                        <TableCell>{application.description}</TableCell>
                                         <TableCell>
                                             <div className='flex items-center justify-center'>
                                                 {(hasAnyPermission(['applications-update']) || hasAnyPermission(['applications-delete'])) &&

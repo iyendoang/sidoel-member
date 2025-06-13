@@ -10,7 +10,7 @@
    {
       use SoftDeletes;
 
-      protected $table = 'token_apps';
+      protected $table    = 'token_apps';
       protected $fillable = [
          'application_id',
          'token_npsn',
@@ -21,7 +21,13 @@
          'description',
          'status',
       ];
-      protected $dates    = ['expired_at', 'used_at', 'deleted_at'];
+      protected $casts    = [
+         'expired_at' => 'date',
+         'used_at'    => 'datetime',
+         'created_at' => 'datetime',
+         'updated_at' => 'datetime',
+         'deleted_at' => 'datetime',
+      ];
 
       public function application(): BelongsTo {
          return $this->belongsTo(Application::class, 'application_id', 'id');
@@ -30,6 +36,5 @@
       public function lembaga(): BelongsTo {
          return $this->belongsTo(Lembaga::class, 'token_npsn', 'npsn');
       }
-
    }
 

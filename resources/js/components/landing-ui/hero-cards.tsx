@@ -13,6 +13,7 @@ import {Check, Linkedin} from "lucide-react";
 import {GitHubLogoIcon} from "@radix-ui/react-icons";
 import {LightBulbIcon} from "@/components/landing-ui/icons";
 import {Link} from "@inertiajs/react";
+import {ShineBorder} from "@/components/magicui/shine-border";
 
 export const HeroCards = () => {
     return (
@@ -42,6 +43,7 @@ export const HeroCards = () => {
             {/* Team */}
             <Card
                 className="absolute right-[20px] top-4 w-80 flex flex-col justify-center items-center drop-shadow-xl shadow-black/10 dark:shadow-white/10">
+                <ShineBorder shineColor={["#A07CFE", "#FE8FB5"]} />
                 <CardHeader className="mt-8 flex justify-center items-center pb-2">
                     <img
                         src="/assets/shadcn.png"
@@ -112,7 +114,8 @@ export const HeroCards = () => {
             </Card>
 
             {/* Pricing */}
-            <Card className="absolute top-[150px] left-[50px] w-72 drop-shadow-xl shadow-black/10 dark:shadow-white/10">
+            <Card className="absolute top-[150px] left-[40px] w-72 drop-shadow-xl shadow-black/10 dark:shadow-white/10">
+                <ShineBorder shineColor={["#A07CFE", "#FE8FB5"]} />
                 <CardHeader>
                     <CardTitle className="flex item-center justify-between">
                         Gratis
@@ -124,7 +127,6 @@ export const HeroCards = () => {
                         <span className="text-3xl font-bold">Rp0</span>
                         <span className="text-muted-foreground"> /event</span>
                     </div>
-
                     <CardDescription>
                         Gunakan fitur utama Sidoel tanpa biaya untuk sekali event sebagai trial pada pelaksanaan ujian online Anda.
                     </CardDescription>

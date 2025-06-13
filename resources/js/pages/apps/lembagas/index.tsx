@@ -283,7 +283,10 @@ export default function Index() {
                         <TableHeader>
                             <TableRow>
                                 <TableHead className='w-[10px] text-center'>No</TableHead>
-                                <TableHead>Nama Data Lembaga</TableHead>
+                                <TableHead className="w-10 text-center">Jenjang</TableHead>
+                                <TableHead className="w-20 text-center">NPSN</TableHead>
+                                <TableHead>Nama</TableHead>
+                                <TableHead>Nama</TableHead>
                                 <TableHead className='w-[10px] text-center'>Aksi</TableHead>
                             </TableRow>
                         </TableHeader>
@@ -296,7 +299,10 @@ export default function Index() {
                                         <TableCell className="text-center">
                                             {++index + (lembagas.current_page - 1) * lembagas.per_page}
                                         </TableCell>
+                                        <TableCell className="text-center">{lembaga.level}</TableCell>
+                                        <TableCell className="text-center">{lembaga.npsn}</TableCell>
                                         <TableCell>{lembaga.name}</TableCell>
+                                        <TableCell>{lembaga.phone}</TableCell>
                                         <TableCell>
                                             <div className='flex items-center justify-center'>
                                                 {(hasAnyPermission(['lembagas-update']) || hasAnyPermission(['lembagas-delete'])) &&

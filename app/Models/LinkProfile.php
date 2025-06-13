@@ -15,6 +15,11 @@
          'theme',
       ];
 
+      // LinkProfile.php
+      public function getAvatarUrlAttribute() {
+         return asset($this->avatar ? : 'assets/shadcn.png');
+      }
+
       public function links() {
          return $this->hasMany(Link::class, 'link_profile_id');
       }

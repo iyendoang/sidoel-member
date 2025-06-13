@@ -65,55 +65,61 @@ export const Navbar = () => {
 
                     {/* mobile */}
                     <span className="flex md:hidden">
-            <ModeToggle/>
+                        <ModeToggle/>
+                        <Sheet
+                            open={isOpen}
+                            onOpenChange={setIsOpen}
+                        >
+                              <SheetTrigger className="px-2">
+                                <Menu
+                                    className="flex md:hidden h-5 w-5"
+                                    onClick={() => setIsOpen(true)}
+                                >
+                                  <span className="sr-only">Menu Icon</span>
+                                </Menu>
+                              </SheetTrigger>
 
-            <Sheet
-                open={isOpen}
-                onOpenChange={setIsOpen}
-            >
-              <SheetTrigger className="px-2">
-                <Menu
-                    className="flex md:hidden h-5 w-5"
-                    onClick={() => setIsOpen(true)}
-                >
-                  <span className="sr-only">Menu Icon</span>
-                </Menu>
-              </SheetTrigger>
-
-              <SheetContent side={"left"}>
-                <SheetHeader>
-                  <SheetTitle className="font-bold text-xl">
-                    Shadcn/React
-                  </SheetTitle>
-                </SheetHeader>
-                <nav className="flex flex-col justify-center items-center gap-2 mt-4">
-                  {routeList.map(({href, label}: RouteProps) => (
-                      <a
-                          rel="noreferrer noopener"
-                          key={label}
-                          href={href}
-                          onClick={() => setIsOpen(false)}
-                          className={buttonVariants({variant: "ghost"})}
-                      >
-                          {label}
-                      </a>
-                  ))}
-                    <a
-                        rel="noreferrer noopener"
-                        href="https://github.com/leoMirandaa/shadcn-landing-page.git"
-                        target="_blank"
-                        className={`w-[110px] border ${buttonVariants({
-                            variant: "secondary",
-                        })}`}
-                    >
-                    <GitHubLogoIcon className="mr-2 w-5 h-5"/>
-                    Github
-                  </a>
-                </nav>
-              </SheetContent>
-            </Sheet>
-          </span>
-
+                              <SheetContent side={"left"}>
+                                <SheetHeader>
+                                  <SheetTitle className="font-bold text-xl">
+                                    Shadcn/React
+                                  </SheetTitle>
+                                </SheetHeader>
+                                <nav className="flex flex-col justify-center items-center gap-2 mt-4">
+                                  {routeList.map(({href, label}: RouteProps) => (
+                                      <a
+                                          rel="noreferrer noopener"
+                                          key={label}
+                                          href={href}
+                                          onClick={() => setIsOpen(false)}
+                                          className={buttonVariants({variant: "ghost"})}
+                                      >
+                                          {label}
+                                      </a>
+                                  ))}
+                                    {user ? (
+                                        <Link
+                                            href={route('apps.dashboard')}
+                                            as="button"
+                                            className={`w-[110px] border ${buttonVariants({
+                                                variant: "secondary",
+                                            })}`}>
+                                            {auth.user.name}
+                                        </Link>
+                                    ) : (
+                                        <Link
+                                            href={route('login')}
+                                            className={`w-[110px] border ${buttonVariants({
+                                                variant: "secondary",
+                                            })}`}>
+                                            <LogInIcon className="mr-2 w-5 h-5"/>
+                                            Login
+                                        </Link>
+                                    )}
+                                </nav>
+                              </SheetContent>
+                            </Sheet>
+                     </span>
                     {/* desktop */}
                     <nav className="hidden md:flex gap-2">
                         {routeList.map((route: RouteProps, i) => (

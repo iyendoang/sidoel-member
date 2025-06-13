@@ -2,33 +2,38 @@ import {Lembaga, LembagaOption} from "@/types/lembaga";
 import {Application} from "@/types/application";
 import {Option} from "@/types/index";
 
-export interface TokenApps {
-    id: string;                      // id bigint di DB, gunakan string di TS
-    application_id: string;          // FK ke aplikasi
-    application?: Application;       // relasi aplikasi (optional, kalau eager loaded)
-    token_npsn: string;              // FK ke lembaga.npsn
-    lembaga?: Lembaga;               // relasi lembaga (optional, kalau eager loaded)
-    token: string;                  // token unik
-    expired_at: string;             // format ISO date string (dari DB date)
+export interface TokenApp {
+    id: string;
+    application: {
+        id: number | null;
+        name: string | null;
+    };
+    lembaga: {
+        npsn: string | null;
+        name: string | null;
+    };
+    token: string;
+    application_id: number;
+    token_npsn: string;
+    status: 'active' | 'in_active' | 'suspended';
     is_valid: boolean;
-    used_at?: string | null;        // timestamp nullable, bisa string ISO atau null
-    description?: string | null;    // nullable string
-    status: 'active' | 'expired' | 'revoked';
-    created_at: string;             // timestamp created_at
-    updated_at: string;             // timestamp updated_at
-    deleted_at?: string | null;     // nullable soft delete timestamp
-    current_page: number;
-    per_page: number;
+    description: string | null;
+    expired_at: string | null;
+    expired_human: string | null;
+    used_at: string | null;
+    used_human: string | null;
+    created_at: string;
+    created_human: string;
 }
 
 
-export interface TokenAppsLink {
+export interface TokenAppLink {
     url: string | null;
     label: string;
     active: boolean;
 }
 
-export interface TokenAppsFormProps {
+export interface TokenAppFormProps {
     data: Record<string, any>,
     errors: Record<string, string>,
     processing: boolean,

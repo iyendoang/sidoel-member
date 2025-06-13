@@ -20,7 +20,7 @@
             $table->boolean('is_valid')->default(true);
             $table->timestamp('used_at')->nullable();
             $table->string('description')->nullable();
-            $table->enum('status', ['active', 'expired', 'revoked'])->default('active');
+            $table->enum('status', ['active', 'in_active', 'suspended'])->default('in_active');
             $table->timestamps();
             $table->softDeletes();
             $table->index(['application_id', 'token_npsn']);
@@ -31,6 +31,6 @@
        * Reverse the migrations.
        */
       public function down(): void {
-         Schema::dropIfExists('token_apps'); // Sudah cukup kalau drop tabel langsung
+         Schema::dropIfExists('token_apps');
       }
    };
