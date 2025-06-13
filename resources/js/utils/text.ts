@@ -1,6 +1,3 @@
-// resources/js/utils/text.ts
-
-// Potong teks berdasarkan jumlah kata
 export function truncateWords(text: string | null, wordLimit: number = 30): string {
     if (!text) return '';
     const words = text.trim().split(/\s+/);

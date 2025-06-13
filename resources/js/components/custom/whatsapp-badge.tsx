@@ -1,7 +1,7 @@
 import React from 'react'
 import { Badge } from '@/components/ui/badge'
 import { MessageCircleMore } from 'lucide-react'
-import {formatPhoneNumber} from "@/lib/text";
+import {formatPhoneNumber} from "@/utils/text";
 
 interface WhatsAppBadgeProps {
     phone: string | null

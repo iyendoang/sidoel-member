@@ -21,7 +21,7 @@ import hasAnyRole from "@/utils/has-role";
 import {InputDate} from "@/components/ui/input-date";
 
 
-export default function TokenAppsForm({
+export default function TokenAppForm({
                                           data,
                                           errors,
                                           processing,

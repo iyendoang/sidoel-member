@@ -43,7 +43,7 @@ import {badgeVariants} from "@/components/ui/badge";
 import {Avatar, AvatarFallback, AvatarImage} from "@/components/ui/avatar";
 import {cn} from "@/lib/utils";
 import {ModalDelete} from "@/components/modal-delete";
-import {TokenApps} from "@/types/token-apps";
+import {TokenApp} from "@/types/token-apps";
 import {ModalAlertDelete} from "@/components/modal-alert-delete";
 
 interface IndexProps extends PageProps {
