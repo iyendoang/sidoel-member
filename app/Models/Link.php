@@ -17,6 +17,7 @@
          'order',
          'clicks',
          'bg_color',
+         'is_safemode'
       ];
 
       public function lembaga(): BelongsTo {

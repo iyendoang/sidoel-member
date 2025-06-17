@@ -20,6 +20,7 @@
             'url'           => $this->url,
             'icon'          => $this->icon,
             'is_active'     => $this->is_active,
+            'is_safemode'   => $this->is_safemode,
             'order'         => $this->order,
             'click'         => $this->click,
             'bg_color'      => $this->bg_color,

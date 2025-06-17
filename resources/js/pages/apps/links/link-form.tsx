@@ -161,6 +161,15 @@ export default function LinkForm({
                         error={errors.is_active}
                     />
                 </div>
+                <div>
+                    <InputSwitch
+                        id="is_safemode"
+                        label="Safe Mode CBT"
+                        checked={data.is_safemode ?? true}
+                        onCheckedChange={(checked) => setData("is_safemode", checked)}
+                        error={errors.is_safemode}
+                    />
+                </div>
 
                 {/* Buttons */}
                 <ButtonSubmitEnd reset={reset} processing={processing} />

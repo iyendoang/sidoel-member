@@ -62,6 +62,7 @@ export default function Index() {
         link_profile_id: linkProfile.id,
         icon: '',
         is_active: false,
+        is_safemode: false,
         order: '',
         bg_color: '',
         open: false as boolean,
@@ -86,6 +87,7 @@ export default function Index() {
             url: link.url,
             icon: link.icon,
             is_active: link.is_active || false,
+            is_safemode: link.is_safemode || false,
             order: link.order,
             bg_color: link.bg_color,
             open: true,
@@ -142,6 +144,7 @@ export default function Index() {
                             link_profile_id:linkProfile.id,
                             icon: '',
                             is_active: false,
+                            is_safemode: false,
                             order: '',
                             bg_color: '',
                             isUpdate: false

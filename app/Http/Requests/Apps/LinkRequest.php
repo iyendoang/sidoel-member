@@ -29,6 +29,7 @@
             'url'             => ['required', 'url', 'max:255'],
             'icon'            => ['nullable', 'string', 'max:100'],
             'is_active'       => ['required', 'boolean'],
+            'is_safemode'     => ['required', 'boolean'],
             'order'           => ['nullable', 'integer', 'min:0'],
             'bg_color'        => ['nullable', 'string', 'max:20'],
          ];
@@ -45,6 +46,11 @@
          if(isset($raw['is_active'])){
             $this->merge([
                'is_active' => filter_var($raw['is_active'], FILTER_VALIDATE_BOOLEAN),
+            ]);
+         }
+         if(isset($raw['is_safemode'])){
+            $this->merge([
+               'is_safemode' => filter_var($raw['is_safemode'], FILTER_VALIDATE_BOOLEAN),
             ]);
          }
       }

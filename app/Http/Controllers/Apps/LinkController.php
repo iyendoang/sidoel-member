@@ -34,6 +34,7 @@
             'url'             => $validated['url'],
             'icon'            => $validated['icon'] ?? NULL,
             'is_active'       => $validated['is_active'],
+            'is_safemode'     => $validated['is_safemode'],
             'order'           => $validated['order'] ?? 0,
             'bg_color'        => $validated['bg_color'] ?? NULL,
          ]);
@@ -58,6 +59,7 @@
             'url'             => $validated['url'],
             'icon'            => $validated['icon'] ?? NULL,
             'is_active'       => $validated['is_active'],
+            'is_safemode'     => $validated['is_safemode'],
             'order'           => $validated['order'] ?? 0,
             'bg_color'        => $validated['bg_color'] ?? NULL,
          ]);

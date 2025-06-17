@@ -1,6 +1,3 @@
-
-
-
 export interface Link {
     id: string;
     link_npsn: string;
@@ -8,6 +5,7 @@ export interface Link {
     url: string;
     icon: string | null;
     is_active: boolean;
+    is_safemode: boolean;
     order: string;
     clicks: string;
     clicks_count: string;
