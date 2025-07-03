@@ -33,8 +33,9 @@
             'title'           => $validated['title'],
             'url'             => $validated['url'],
             'icon'            => $validated['icon'] ?? NULL,
+            'is_cbt_offline'  => $validated['is_cbt_offline'],
             'is_active'       => $validated['is_active'],
-            'is_safemode'     => $validated['is_safemode'],
+            'is_safemode'     => $validated['is_safemode'] ?? false,
             'order'           => $validated['order'] ?? 0,
             'bg_color'        => $validated['bg_color'] ?? NULL,
          ]);
@@ -58,6 +59,7 @@
             'title'           => $validated['title'],
             'url'             => $validated['url'],
             'icon'            => $validated['icon'] ?? NULL,
+            'is_cbt_offline'  => $validated['is_cbt_offline'],
             'is_active'       => $validated['is_active'],
             'is_safemode'     => $validated['is_safemode'],
             'order'           => $validated['order'] ?? 0,

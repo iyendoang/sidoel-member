@@ -8,6 +8,7 @@ import {InputSelect, InputSelectTrigger} from "@/components/ui/input-select";
 import InputSwitch from "@/components/ui/input-switch";
 import {InputSelectField} from "@/components/ui/input-select-field";
 import ButtonSubmitEnd from "@/components/ui/button-submit-end";
+import {useEffect} from "react";
 
 interface LinkFormProps {
     data: Record<string, any>;
@@ -57,6 +58,13 @@ export default function LinkForm({
             icon: Bell,
         },
     ];
+    useEffect(() => {
+        if (data.is_cbt_offline) {
+            // Saat CBT offline aktif
+            setData("is_active", true);      // aktif otomatis
+            setData("is_safemode", false);   // safemode dimatikan
+        }
+    }, [data.is_cbt_offline]);
 
     return (
         <div className="p-4 pt-0 space-y-4">
@@ -151,25 +159,42 @@ export default function LinkForm({
                     <p className="text-red-500 text-xs">{errors.order}</p>
                 </div>
 
-                {/* Status */}
+                {/* CBT OFFLINE */}
                 <div>
                     <InputSwitch
-                        id="is_active"
-                        label="Status Aktif"
-                        checked={data.is_active ?? true}
-                        onCheckedChange={(checked) => setData("is_active", checked)}
-                        error={errors.is_active}
+                        id="is_cbt_offline"
+                        label="CBT OFFLINE"
+                        checked={data.is_cbt_offline ?? true}
+                        onCheckedChange={(checked) => setData("is_cbt_offline", checked)}
+                        error={errors.is_cbt_offline}
                     />
                 </div>
-                <div>
-                    <InputSwitch
-                        id="is_safemode"
-                        label="Safe Mode CBT"
-                        checked={data.is_safemode ?? true}
-                        onCheckedChange={(checked) => setData("is_safemode", checked)}
-                        error={errors.is_safemode}
-                    />
-                </div>
+                {/* Status Aktif (hidden jika CBT offline) */}
+                {!data.is_cbt_offline && (
+                    <div>
+                        <InputSwitch
+                            id="is_active"
+                            label="Status Aktif"
+                            checked={data.is_active ?? true}
+                            onCheckedChange={(checked) => setData("is_active", checked)}
+                            error={errors.is_active}
+                        />
+                    </div>
+                )}
+
+                {/* Safe Mode CBT (hidden jika CBT offline) */}
+                {!data.is_cbt_offline && (
+                    <div>
+                        <InputSwitch
+                            id="is_safemode"
+                            label="Safe Mode CBT"
+                            checked={data.is_safemode ?? true}
+                            onCheckedChange={(checked) => setData("is_safemode", checked)}
+                            error={errors.is_safemode}
+                        />
+                    </div>
+                )}
+
 
                 {/* Buttons */}
                 <ButtonSubmitEnd reset={reset} processing={processing} />

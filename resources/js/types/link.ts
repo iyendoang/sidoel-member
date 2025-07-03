@@ -4,6 +4,7 @@ export interface Link {
     title: string;
     url: string;
     icon: string | null;
+    is_cbt_offline: boolean;
     is_active: boolean;
     is_safemode: boolean;
     order: string;

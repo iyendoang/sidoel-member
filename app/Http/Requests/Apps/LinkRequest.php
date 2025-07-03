@@ -28,6 +28,7 @@
             'title'           => ['required', 'string', 'max:255'],
             'url'             => ['required', 'url', 'max:255'],
             'icon'            => ['nullable', 'string', 'max:100'],
+            'is_cbt_offline'  => ['required', 'boolean'],
             'is_active'       => ['required', 'boolean'],
             'is_safemode'     => ['required', 'boolean'],
             'order'           => ['nullable', 'integer', 'min:0'],
@@ -43,6 +44,11 @@
 
       protected function prepareForValidation(): void {
          $raw = $this->input('raw', []);
+         if(isset($raw['is_cbt_offline'])){
+            $this->merge([
+               'is_cbt_offline' => filter_var($raw['is_cbt_offline'], FILTER_VALIDATE_BOOLEAN),
+            ]);
+         }
          if(isset($raw['is_active'])){
             $this->merge([
                'is_active' => filter_var($raw['is_active'], FILTER_VALIDATE_BOOLEAN),

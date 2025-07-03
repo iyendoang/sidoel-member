@@ -13,6 +13,7 @@
          'title',
          'url',
          'icon',
+         'is_cbt_offline',
          'is_active',
          'order',
          'clicks',

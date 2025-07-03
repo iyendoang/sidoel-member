@@ -20,6 +20,7 @@ return new class extends Migration
            $table->integer('order')->default(0);
            $table->string('icon')->nullable();
            $table->string('bg_color')->nullable();
+           $table->boolean('is_cbt_offline')->default(false);
            $table->boolean('is_active')->default(true);
            $table->boolean('is_safemode')->default(false);
            $table->unsignedBigInteger('clicks')->default(0);

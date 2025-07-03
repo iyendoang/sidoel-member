@@ -10,5 +10,6 @@
 
       // Link
       Route::get('links/{npsn?}', [LinkController::class, 'show']);
+      Route::get('cbt-offline-links/{npsn?}', [LinkController::class, 'showByCbt']);
    });
 ?>

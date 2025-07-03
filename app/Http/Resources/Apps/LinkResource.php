@@ -14,25 +14,26 @@
        */
       public function toArray($request): array {
          return [
-            'id'            => (string) $this->id,
-            'link_npsn'     => $this->link_npsn,
-            'title'         => $this->title,
-            'url'           => $this->url,
-            'icon'          => $this->icon,
-            'is_active'     => $this->is_active,
-            'is_safemode'   => $this->is_safemode,
-            'order'         => $this->order,
-            'click'         => $this->click,
-            'bg_color'      => $this->bg_color,
-            'created_at'    => $this->created_at?->toDateTimeString(),
-            'updated_at'    => $this->updated_at?->toDateTimeString(),
-            'link_profiles' => $this->whenLoaded('link_profiles', fn()
+            'id'             => (string) $this->id,
+            'link_npsn'      => $this->link_npsn,
+            'title'          => $this->title,
+            'url'            => $this->url,
+            'icon'           => $this->icon,
+            'is_cbt_offline' => $this->is_cbt_offline,
+            'is_active'      => $this->is_active,
+            'is_safemode'    => $this->is_safemode,
+            'order'          => $this->order,
+            'click'          => $this->click,
+            'bg_color'       => $this->bg_color,
+            'created_at'     => $this->created_at?->toDateTimeString(),
+            'updated_at'     => $this->updated_at?->toDateTimeString(),
+            'link_profiles'  => $this->whenLoaded('link_profiles', fn()
                => [
                'bio'    => $this->lembaga->bio,
                'avatar' => $this->lembaga->avatar,
                'theme'  => $this->lembaga->theme,
             ]),
-            'lembaga'       => $this->whenLoaded('lembaga', fn()
+            'lembaga'        => $this->whenLoaded('lembaga', fn()
                => [
                'npsn' => $this->lembaga->npsn,
                'name' => $this->lembaga->name,

@@ -23,6 +23,7 @@
             'icon'            => $this->icon,
             'bg_color'        => $this->bg_color,
             'clicks'          => $this->clicks,
+            'is_cbt_offline'  => $this->is_cbt_offline,
             'is_active'       => $this->is_active,
             'is_safemode'     => $this->is_safemode,
             'created_at'      => $this->created_at,
